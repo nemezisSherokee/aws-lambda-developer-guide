@@ -39,7 +39,8 @@ build_phase:
   stage: build
   script:
     - ls
-    - ./0-deploy.sh
+    - chmod 777 ./0-build.sh
+    - ./0-build.sh
   artifacts:
     expire_in: 5 min
     paths: 
