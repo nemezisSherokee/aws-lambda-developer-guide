@@ -14,9 +14,16 @@ cache:
   paths:
     - .m2/repository
 
-production:
+    
+.java-blank:
+    before_script:
+        - cd sample-apps/blank-java
+
+list:
+  extends: .backend-setup
   script:
     - ls
+
 
 # stages:
   # - deploy
