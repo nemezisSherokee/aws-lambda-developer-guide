@@ -19,31 +19,34 @@ cache:
     before_script:
         - cd sample-apps/blank-java
 
-list:
-  extends: .java-blank
-  script:
-    - ls
+# list:
+  # extends: .java-blank
+  # script:
+    # - ls
 
 
-# stages:
-  # - deploy
-  # - test
-  # - destroy
+stages:
+  - deploy
+  - test
+  - destroy
   
-# production:
-  # stage: deploy
-  # before_script:
-    # - ./1-create-bucket.sh
-  # script:
-    # - ./3-deploy.sh
+production:
+  extends: .java-blank
+  stage: deploy
+  before_script:
+    - ./1-create-bucket.sh
+  script:
+    - ./3-deploy.sh
 
-# test:
-  # stage: test
-  # script:
-    # - ./4-invoke.sh
+test:
+  extends: .java-blank
+  stage: test
+  script:
+    - ./4-invoke.sh
 
-# destroy:
-  # stage: destroy
-  # script:
-    # - 5-cleanup.sh
-  # when: manual
+destroy:
+  extends: .java-blank
+  stage: destroy
+  script:
+    - 5-cleanup.sh
+  when: manual

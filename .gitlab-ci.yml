@@ -1,15 +1,8 @@
-# building:
-  # trigger:
-    # project: sample-apps/blank-java
-
 production:
   script:
     - ls
 
-# parent .gitlab-ci.yml
 blank_java:
   trigger: 
     include: sample-apps/blank-java/.gitlab-ci.yml
-      # - project: 'sample-apps/blank-java'
-        # file: .gitlab-ci.yml
 
