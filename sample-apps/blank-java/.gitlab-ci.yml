@@ -30,21 +30,23 @@ stages:
   - test
   - destroy
   
-production:
+deploy_phase:
   extends: .java-blank
   stage: deploy
-  before_script:
-    - ./1-create-bucket.sh
+  # before_script:
+    # - ./1-create-bucket.sh
   script:
+    - ls
+    - ./1-create-bucket.sh
     - ./3-deploy.sh
 
-test:
+test_phase:
   extends: .java-blank
   stage: test
   script:
     - ./4-invoke.sh
 
-destroy:
+destroy_phase:
   extends: .java-blank
   stage: destroy
   script:
