@@ -8,8 +8,8 @@ production:
 
 # parent .gitlab-ci.yml
 sample_apps.blank_java:
-  trigger:
-    include: 
-      - project: 'sample-apps/blank-java'
-        file: .gitlab-ci.yml
+  trigger: sample-apps/blank-java
+    # include: 
+      # - project: 'sample-apps/blank-java'
+        # file: .gitlab-ci.yml
 
