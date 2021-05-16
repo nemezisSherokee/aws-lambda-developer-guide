@@ -7,9 +7,9 @@ variables:
   # `installAtEnd` and `deployAtEnd` are only effective with recent version of the corresponding plugins.
   MAVEN_CLI_OPTS: "--batch-mode --errors --fail-at-end --show-version -DinstallAtEnd=true -DdeployAtEnd=true"
 
-#image: maven:3.3.9-jdk-8 #softinstigate/maven-aws #maven:3.3.9-jdk-8
+image: maven:3.3.9-jdk-8 #softinstigate/maven-aws #maven:3.3.9-jdk-8
 #image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-base:latest  # see the note below
-image: softinstigate/maven-aws
+#image: softinstigate/maven-aws
 
 cache:
   paths:
@@ -28,18 +28,18 @@ cache:
 
 
 stages:
-  - build
+  #- build
   - deploy
   - test
   - destroy
   
-.build_phase:
+build_phase:
   extends: .java-blank
   #image: maven:3.3.9-jdk-8 
   stage: build
   script:
     - ls
-    - ./0-build.sh
+    - ./0-deploy.sh
   artifacts:
     expire_in: 5 min
     paths: 
