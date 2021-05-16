@@ -7,7 +7,7 @@ production:
     - ls
 
 # parent .gitlab-ci.yml
-sample_apps.blank_java:
+blank_java:
   trigger: sample-apps/blank-java
     # include: 
       # - project: 'sample-apps/blank-java'
