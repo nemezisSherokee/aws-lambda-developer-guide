@@ -8,6 +8,7 @@ bucket-name.txt
 target
 build
 .gradle
+.idea/
 *.zip
 bin
 obj
