@@ -26,10 +26,25 @@ cache:
 
 
 stages:
+  - build
   - deploy
   - test
   - destroy
   
+build_phase:
+  extends: .java-blank
+  stage: build
+  before_script:
+    - ls
+  script:
+    - ls
+    - ./0-build.sh
+  artifacts:
+    expire_in: 5 min
+    paths: 
+      - target/*.jar
+
+
 deploy_phase:
   extends: .java-blank
   stage: deploy
@@ -39,6 +54,11 @@ deploy_phase:
     - ls
     - ./1-create-bucket.sh
     - ./3-deploy.sh
+  artifacts:
+    expire_in: 5 min
+    paths: 
+      - target/*.jar
+
 
 test_phase:
   extends: .java-blank
