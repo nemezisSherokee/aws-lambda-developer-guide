@@ -52,6 +52,11 @@ class InvokeTest {
     Handler handler = new Handler();
     String result = handler.handleRequest(event, context);
     assertTrue(result.contains("totalCodeSize"));
+      System.out.println();
+      System.out.println();
+      System.out.println("TESTING ARE PASSED.....");
+      System.out.println();
+      System.out.println();
     AWSXRay.endSegment();
   }
 
