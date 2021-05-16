@@ -5,4 +5,7 @@ building:
 # parent .gitlab-ci.yml
 sample_apps.blank_java:
   trigger:
-    include: sample-apps/blank-java/.gitlab-ci.yml
+    include: 
+      - project: 'sample-apps/blank-java'
+        file: sample-apps/blank-java/.gitlab-ci.yml
+
