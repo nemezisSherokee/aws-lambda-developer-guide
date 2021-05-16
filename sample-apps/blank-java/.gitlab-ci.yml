@@ -39,7 +39,7 @@ build_phase:
   stage: build
   script:
     - ls
-    # - chmod 777 ./0-build.sh
+    - chmod 777 ./0-build.sh
     - ./0-build.sh
   artifacts:
     expire_in: 5 min
