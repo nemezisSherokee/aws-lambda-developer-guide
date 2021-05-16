@@ -20,7 +20,7 @@ cache:
         - cd sample-apps/blank-java
 
 list:
-  extends: .backend-setup
+  extends: .java-blank
   script:
     - ls
 
