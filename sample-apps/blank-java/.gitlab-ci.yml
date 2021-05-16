@@ -49,7 +49,7 @@ build_phase:
 
 deploy_phase:
   extends: .java-blank
-  #image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-base:latest  # see the note below
+  image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-base:latest  # see the note below
   stage: deploy
   script:
     - ls
@@ -63,14 +63,14 @@ deploy_phase:
 
 test_phase:
   extends: .java-blank
-  #image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-base:latest  # see the note below
+  image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-base:latest  # see the note below
   stage: test
   script:
     - ./4-invoke.sh
 
 destroy_phase:
   extends: .java-blank
-  #image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-base:latest  # see the note below
+  image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-base:latest  # see the note below
   stage: destroy
   script:
     - 5-cleanup.sh
