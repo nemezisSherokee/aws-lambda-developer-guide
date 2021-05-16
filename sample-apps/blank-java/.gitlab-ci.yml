@@ -14,25 +14,29 @@ cache:
   paths:
     - .m2/repository
 
-stages:
-  - deploy
-  - test
-  - destroy
-  
 production:
-  stage: deploy
-  before_script:
-    - ./1-create-bucket.sh
   script:
-    - ./3-deploy.sh
+    - ls
 
-test:
-  stage: test
-  script:
-    - ./4-invoke.sh
+# stages:
+  # - deploy
+  # - test
+  # - destroy
+  
+# production:
+  # stage: deploy
+  # before_script:
+    # - ./1-create-bucket.sh
+  # script:
+    # - ./3-deploy.sh
 
-destroy:
-  stage: destroy
-  script:
-    - 5-cleanup.sh
-  when: manual
+# test:
+  # stage: test
+  # script:
+    # - ./4-invoke.sh
+
+# destroy:
+  # stage: destroy
+  # script:
+    # - 5-cleanup.sh
+  # when: manual
