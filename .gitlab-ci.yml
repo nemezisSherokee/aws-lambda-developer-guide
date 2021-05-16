@@ -1,8 +1,8 @@
-production:
+listing_parent:
   script:
     - ls
 
-blank_java:
+building_blank_java:
   trigger: 
     include: sample-apps/blank-java/.gitlab-ci.yml
     strategy: depend
