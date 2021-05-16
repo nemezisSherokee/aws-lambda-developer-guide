@@ -28,7 +28,7 @@ cache:
 
 
 stages:
-  #- build
+  - build
   - deploy
   - test
   - destroy
