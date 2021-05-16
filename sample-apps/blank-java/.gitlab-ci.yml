@@ -7,14 +7,12 @@ variables:
   # `installAtEnd` and `deployAtEnd` are only effective with recent version of the corresponding plugins.
   MAVEN_CLI_OPTS: "--batch-mode --errors --fail-at-end --show-version -DinstallAtEnd=true -DdeployAtEnd=true"
 
-
-image: image: maven:3.3.9-jdk-8
+image: maven:3.3.9-jdk-8
 
 
 cache:
   paths:
     - .m2/repository
-
 
 stages:
   - deploy
