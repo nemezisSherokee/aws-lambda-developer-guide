@@ -2,6 +2,10 @@
   # trigger:
     # project: sample-apps/blank-java
 
+production:
+  script:
+    - ls
+
 # parent .gitlab-ci.yml
 sample_apps.blank_java:
   trigger:
