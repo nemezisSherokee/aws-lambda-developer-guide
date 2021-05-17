@@ -18,7 +18,7 @@ cache:
     
 .java-blank:
     before_script:
-        - ls
+        #- ls
         - | 
             if [ -d "target" ] 
             then
@@ -28,22 +28,22 @@ cache:
                 echo "target does not exists."
             fi 
         - cd sample-apps/blank-java
-        - echo $CI_PROJECT_DIR
+        #- echo $CI_PROJECT_DIR
     after_script:
         - cd sample-apps/blank-java
         - ls 
-        - ls ./target/*
         - | 
             if [ -d "target" ] 
             then
+                ls ./target/*
                 cp -rf ./target  $CI_PROJECT_DIR/ 
                 echo "target exists"
             else
                 echo "target does not exists."
             fi 
-        - echo $CI_PROJECT_DIR
-        - ls $CI_PROJECT_DIR
-        - ls $CI_PROJECT_DIR/target/*
+        #- echo $CI_PROJECT_DIR
+        #- ls $CI_PROJECT_DIR
+        #- ls $CI_PROJECT_DIR/target/*
 
 # list:
   # extends: .java-blank

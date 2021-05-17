@@ -17,8 +17,13 @@ if [ -f bucket-name.txt ]; then
         aws s3 rb --force s3://$ARTIFACT_BUCKET; rm bucket-name.txt;
     fi
 fi
+echo "Deleted $STACK stack."
 
 aws logs delete-log-group --log-group-name /aws/lambda/$FUNCTION; 
+echo "Deleted $STACK stack."
 
 rm -f out.yml out.json
+echo "Deleted $STACK stack."
+
 rm -rf build .gradle target
+echo "Deleted $STACK stack."
