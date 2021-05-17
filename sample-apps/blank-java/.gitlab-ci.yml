@@ -97,13 +97,16 @@ destroy_phase:
   image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-base:latest  # see the note below
   stage: destroy
   script:
-    - ./5-cleanup.sh
-  when: manual
+    - chmod 777 ./5-cleanup-yes-all.sh
+    - ./5-cleanup-yes-all.sh
+  #when: manual
 
 cleanup_phase:
   extends: .java-blank
   image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-base:latest  # see the note below
   stage: test
+  allow_failure: true
   script:
-    - ./5-cleanup.sh
+    - chmod 777 ./5-cleanup-yes-all.sh
+    - ./5-cleanup-yes-all.sh
   when: on_failure
