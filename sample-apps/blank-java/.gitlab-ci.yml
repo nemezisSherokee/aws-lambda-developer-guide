@@ -22,7 +22,10 @@ cache:
         - | 
             if [ -d ".target" ] 
             then
-                cp -rf ./target  $CI_PROJECT_DIR/ 
+                cp -rf ./target  $CI_PROJECT_DIR/sample-apps/blank-java
+                echo "target exists"
+            else
+                echo "target does not exists."
             fi 
         - cd sample-apps/blank-java
         - echo $CI_PROJECT_DIR
@@ -30,7 +33,14 @@ cache:
         - cd sample-apps/blank-java
         - ls 
         - ls ./target/*
-        - cp -r ./target  $CI_PROJECT_DIR/
+        - | 
+            if [ -d ".target" ] 
+            then
+                cp -rf ./target  $CI_PROJECT_DIR/ 
+                echo "target exists"
+            else
+                echo "target does not exists."
+            fi 
         - echo $CI_PROJECT_DIR
         - ls $CI_PROJECT_DIR
         - ls $CI_PROJECT_DIR/target/*
