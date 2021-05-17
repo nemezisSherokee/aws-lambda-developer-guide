@@ -79,7 +79,7 @@ destroy_phase:
 cleanup_phase:
   extends: .java-blank
   image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-base:latest  # see the note below
-  stage: deploy
+  stage: test
   script:
     - 5-cleanup.sh
   when: on_failure
