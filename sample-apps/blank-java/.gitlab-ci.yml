@@ -54,7 +54,7 @@ deploy_phase:
   script:
     - ls
     - ./1-create-bucket.sh
-    - ./3-deploy.sh
+    - ./3-deploy.sh mvn
   artifacts:
     expire_in: 5 min
     paths: 
