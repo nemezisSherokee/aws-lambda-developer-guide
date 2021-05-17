@@ -13,6 +13,7 @@ cache:
   paths:
     - .m2/repository
     - $CI_PROJECT_DIR/sample-apps/blank-java
+    - $CI_PROJECT_DIR/sample-apps/blank-java/target
 
     
 .java-blank:
@@ -22,7 +23,7 @@ cache:
         - | 
             if [ -d "target" ] 
             then
-                cp -rf ./target  $CI_PROJECT_DIR/sample-apps/blank-java
+                #cp -rf ./target  $CI_PROJECT_DIR/sample-apps/blank-java
                 echo "before_script: target directory exists"
             else
                 echo "before_script: target directory does not exists."
@@ -53,11 +54,6 @@ cache:
         #- echo $CI_PROJECT_DIR
         #- ls $CI_PROJECT_DIR
         #- ls $CI_PROJECT_DIR/target/*
-
-# list:
-  # extends: .java-blank
-  # script:
-    # - ls
 
 
 stages:
