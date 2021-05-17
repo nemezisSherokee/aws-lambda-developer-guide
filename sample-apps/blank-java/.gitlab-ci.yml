@@ -126,7 +126,7 @@ destroy_phase:
 cleanup_phase:
   extends: .java-blank
   image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-base:latest  # see the note below
-  stage: test, destroy
+  stage: [test, destroy]
   allow_failure: true
   script:
     - chmod 777 ./5-cleanup-yes-all.sh
