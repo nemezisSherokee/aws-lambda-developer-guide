@@ -25,7 +25,7 @@ cache:
         - cd sample-apps/blank-java
         - ls 
         - ls ./target/*
-        - cp ./target/  $CI_PROJECT_DIR/
+        - cp -r ./target  $CI_PROJECT_DIR/
         - echo $CI_PROJECT_DIR
         - ls $CI_PROJECT_DIR
         - ls $CI_PROJECT_DIR/target/*
