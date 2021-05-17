@@ -19,10 +19,9 @@ if [ -f bucket-name.txt ]; then
 		rm bucket-name.txt;
     fi
 fi
-echo "Deleted $STACK stack."
 
 aws logs delete-log-group --log-group-name /aws/lambda/$FUNCTION; 
-echo "Deleted $STACK stack."
+echo "Deleted LOG GROUP FOR /aws/lambda/$FUNCTION."
 
 rm -f out.yml out.json
 echo "Deleted $STACK stack."

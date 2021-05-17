@@ -18,38 +18,38 @@ cache:
     
 .java-blank:
     before_script:
-        - ls
-        - ls $CI_PROJECT_DIR
+        # - ls
+        # - ls $CI_PROJECT_DIR
         - | 
             if [ -d "target" ] 
             then
                 cp -rf ./target  $CI_PROJECT_DIR/sample-apps/blank-java
-                echo "target exists"
+                echo "before_script: target directory exists"
             else
-                echo "target does not exists."
+                echo "before_script: target directory does not exists."
             fi 
         - | 
             if [ -f shared-vars.sh ] 
             then
                 source shared-vars.sh
-                echo "shared-vars.sh exists"
+                echo "before_script: shared-vars.sh file exists"
                 echo $ARTIFACT_BUCKET > sample-apps/blank-java/bucket-name.txt
             else
-                echo "shared-vars.sh does not exists."
+                echo "before_script: shared-vars.sh file does not exists."
             fi 
         - cd sample-apps/blank-java
-        - echo $CI_PROJECT_DIR
+        # - echo $CI_PROJECT_DIR
     after_script:
         - cd sample-apps/blank-java
-        - ls 
+        # - ls 
         - | 
             if [ -d "target" ] 
             then
-                ls ./target/*
+                # ls ./target/*
                 cp -rf ./target  $CI_PROJECT_DIR/ 
-                echo "target exists"
+                echo "after_script : target directory exists"
             else
-                echo "target does not exists."
+                echo "after_script : target directory does not exists."
             fi 
         #- echo $CI_PROJECT_DIR
         #- ls $CI_PROJECT_DIR
@@ -71,7 +71,7 @@ build_phase:
   extends: .java-blank
   stage: build
   script:
-    - ls
+    # - ls
     - chmod 777 ./0-build.sh
     - ./0-build.sh
   artifacts:
@@ -87,12 +87,12 @@ deploy_phase:
   script:
     - ./1-create-bucket.sh
     - ./3-deploy.sh none
-    - ls
+    # - ls
     - ARTIFACT_BUCKET=$(cat bucket-name.txt)
     - echo "export ARTIFACT_BUCKET=$ARTIFACT_BUCKET;" >> $CI_PROJECT_DIR/shared-vars.sh
-    - ls $CI_PROJECT_DIR
-    - cat bucket-name.txt
-    - cat $CI_PROJECT_DIR/shared-vars.sh
+    # - ls $CI_PROJECT_DIR
+    # - cat bucket-name.txt
+    # - cat $CI_PROJECT_DIR/shared-vars.sh
     # - cat bucket-name.txt >> build.env
   artifacts:
     expire_in: 5 min
@@ -132,6 +132,7 @@ cleanup_phase:
   script:
     - chmod 777 ./5-cleanup-yes-all.sh
     - ./5-cleanup-yes-all.sh
+    - rm -rf $CI_PROJECT_DIR/target
   when: on_failure
   artifacts:
     expire_in: 5 min
