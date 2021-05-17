@@ -18,7 +18,7 @@ if [ -f bucket-name.txt ]; then
     fi
 fi
 
-[Yy]* ) aws logs delete-log-group --log-group-name /aws/lambda/$FUNCTION; 
+aws logs delete-log-group --log-group-name /aws/lambda/$FUNCTION; 
 
 rm -f out.yml out.json
 rm -rf build .gradle target
