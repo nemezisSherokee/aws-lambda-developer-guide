@@ -20,6 +20,9 @@ cache:
     before_script:
         - ls
         - cd sample-apps/blank-java
+    after_script:
+        - ls 
+        - ls ./target/*
 
 # list:
   # extends: .java-blank
