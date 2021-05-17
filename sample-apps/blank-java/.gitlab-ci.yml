@@ -19,7 +19,11 @@ cache:
 .java-blank:
     before_script:
         - ls
-        - [ -d ".target" ] && cp -rf ./target  $CI_PROJECT_DIR/
+        - | 
+            if [ -d ".target" ] 
+            then
+                cp -rf ./target  $CI_PROJECT_DIR/ 
+            fi 
         - cd sample-apps/blank-java
         - echo $CI_PROJECT_DIR
     after_script:
