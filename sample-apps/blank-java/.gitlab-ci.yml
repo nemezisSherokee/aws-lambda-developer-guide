@@ -18,7 +18,8 @@ cache:
     
 .java-blank:
     before_script:
-        #- ls
+        - ls
+        - ls $CI_PROJECT_DIR
         - | 
             if [ -d "target" ] 
             then
@@ -28,7 +29,7 @@ cache:
                 echo "target does not exists."
             fi 
         - | 
-            if [ -f "shared-vars.sh" ] 
+            if [ -f shared-vars.sh ] 
             then
                 source shared-vars.sh
                 echo "shared-vars.sh exists"
@@ -37,7 +38,7 @@ cache:
                 echo "shared-vars.sh does not exists."
             fi 
         - cd sample-apps/blank-java
-        #- echo $CI_PROJECT_DIR
+        - echo $CI_PROJECT_DIR
     after_script:
         - cd sample-apps/blank-java
         - ls 
