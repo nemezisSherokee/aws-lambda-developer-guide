@@ -7,4 +7,5 @@ while true; do
   cat out.json
   echo ""
   sleep 2
+  break
 done
