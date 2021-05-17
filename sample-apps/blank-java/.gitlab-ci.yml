@@ -89,7 +89,10 @@ deploy_phase:
     - ls
     - ARTIFACT_BUCKET=$(cat bucket-name.txt)
     - echo "export ARTIFACT_BUCKET=$ARTIFACT_BUCKET;" >> $CI_PROJECT_DIR/shared-vars.sh
-    #- cat bucket-name.txt >> build.env
+    - ls $CI_PROJECT_DIR
+    - cat bucket-name.txt
+    - cat $CI_PROJECT_DIR/shared-vars.sh
+    # - cat bucket-name.txt >> build.env
   artifacts:
     expire_in: 5 min
     paths: 
