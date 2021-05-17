@@ -13,7 +13,7 @@ cache:
   paths:
     - .m2/repository
     # - $CI_PROJECT_DIR/sample-apps/blank-java
-    # - $CI_PROJECT_DIR/sample-apps/blank-java/target
+    - $CI_PROJECT_DIR/sample-apps/blank-java/target
 
     
 .java-blank:
