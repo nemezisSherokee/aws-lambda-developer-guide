@@ -49,7 +49,7 @@ build_phase:
 
 deploy_phase:
   extends: .java-blank
-  image: softinstigate/maven-aws #registry.gitlab.com/gitlab-org/cloud-deploy/aws-base:latest  # see the note below
+  image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-base:latest  # see the note below
   stage: deploy
   script:
     - ls
@@ -73,7 +73,7 @@ destroy_phase:
   image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-base:latest  # see the note below
   stage: destroy
   script:
-    - 5-cleanup.sh
+    - ./5-cleanup.sh
   when: manual
 
 cleanup_phase:
@@ -81,5 +81,5 @@ cleanup_phase:
   image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-base:latest  # see the note below
   stage: test
   script:
-    - 5-cleanup.sh
+    - ./5-cleanup.sh
   when: on_failure

@@ -9,6 +9,7 @@ then
     TEMPLATE=template-mvn.yml
     mvn package
   fi
+  TEMPLATE=template-mvn.yml
 else
   gradle build -i
 fi
