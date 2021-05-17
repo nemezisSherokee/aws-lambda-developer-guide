@@ -1,6 +1,7 @@
 listing_parent:
   script:
     - ls
+    - echo $CI_PROJECT_DIR
 
 building_blank_java:
   trigger: 
