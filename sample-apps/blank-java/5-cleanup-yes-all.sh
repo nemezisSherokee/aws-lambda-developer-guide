@@ -11,10 +11,12 @@ echo "Deleted $STACK stack."
 
 if [ -f bucket-name.txt ]; then
     ARTIFACT_BUCKET=$(cat bucket-name.txt)
+	echo "ARTIFACT_BUCKET $ARTIFACT_BUCKET exists."
     if [[ ! $ARTIFACT_BUCKET =~ lambda-artifacts-[a-z0-9]{16} ]] ; then
         echo "Bucket was not created by this application. Skipping."
     else
-        aws s3 rb --force s3://$ARTIFACT_BUCKET; rm bucket-name.txt;
+        aws s3 rb --force s3://$ARTIFACT_BUCKET; 
+		rm bucket-name.txt;
     fi
 fi
 echo "Deleted $STACK stack."

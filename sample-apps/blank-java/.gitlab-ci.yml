@@ -27,6 +27,15 @@ cache:
             else
                 echo "target does not exists."
             fi 
+        - | 
+            if [ -f "shared-vars.sh" ] 
+            then
+                source shared-vars.sh
+                echo "shared-vars.sh exists"
+                echo $ARTIFACT_BUCKET > sample-apps/blank-java/bucket-name.txt
+            else
+                echo "shared-vars.sh does not exists."
+            fi 
         - cd sample-apps/blank-java
         #- echo $CI_PROJECT_DIR
     after_script:
@@ -59,7 +68,6 @@ stages:
   
 build_phase:
   extends: .java-blank
-  #image: maven:3.3.9-jdk-8 
   stage: build
   script:
     - ls
@@ -76,9 +84,12 @@ deploy_phase:
   image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-base:latest  # see the note below
   stage: deploy
   script:
-    - ls
     - ./1-create-bucket.sh
     - ./3-deploy.sh none
+    - ls
+    - ARTIFACT_BUCKET=$(cat bucket-name.txt)
+    - echo "export ARTIFACT_BUCKET=$ARTIFACT_BUCKET;" >> $CI_PROJECT_DIR/shared-vars.sh
+    #- cat bucket-name.txt >> build.env
   artifacts:
     expire_in: 5 min
     paths: 
