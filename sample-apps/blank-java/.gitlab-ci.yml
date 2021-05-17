@@ -21,6 +21,7 @@ cache:
         - ls
         - cd sample-apps/blank-java
     after_script:
+        - cd sample-apps/blank-java
         - ls 
         - ls ./target/*
 
