@@ -20,7 +20,7 @@ cache:
     before_script:
         - ls
         - | 
-            if [ -d ".target" ] 
+            if [ -d "target" ] 
             then
                 cp -rf ./target  $CI_PROJECT_DIR/sample-apps/blank-java
                 echo "target exists"
@@ -34,7 +34,7 @@ cache:
         - ls 
         - ls ./target/*
         - | 
-            if [ -d ".target" ] 
+            if [ -d "target" ] 
             then
                 cp -rf ./target  $CI_PROJECT_DIR/ 
                 echo "target exists"
