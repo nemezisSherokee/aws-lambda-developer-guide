@@ -7,7 +7,7 @@ building_blank_java:
   trigger: 
     include: sample-apps/blank-java/.gitlab-ci.yml
     strategy: depend
-  # only:
-    # changes:
-    # - sample-apps/blank-java/**/*
+  only:
+    changes:
+    - sample-apps/blank-java/**/*
 
