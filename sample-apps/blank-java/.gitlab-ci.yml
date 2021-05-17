@@ -98,7 +98,7 @@ deploy_phase:
     expire_in: 5 min
     paths: 
       - target/*.jar
-
+      - shared-vars.sh
 
 test_phase:
   extends: .java-blank
@@ -106,6 +106,10 @@ test_phase:
   stage: test
   script:
     - ./4-invoke.sh
+  artifacts:
+    expire_in: 5 min
+    paths: 
+      - shared-vars.sh
 
 destroy_phase:
   extends: .java-blank
@@ -115,6 +119,10 @@ destroy_phase:
     - chmod 777 ./5-cleanup-yes-all.sh
     - ./5-cleanup-yes-all.sh
   #when: manual
+  artifacts:
+    expire_in: 5 min
+    paths: 
+      - shared-vars.sh
 
 cleanup_phase:
   extends: .java-blank
@@ -125,3 +133,7 @@ cleanup_phase:
     - chmod 777 ./5-cleanup-yes-all.sh
     - ./5-cleanup-yes-all.sh
   when: on_failure
+  artifacts:
+    expire_in: 5 min
+    paths: 
+      - shared-vars.sh
