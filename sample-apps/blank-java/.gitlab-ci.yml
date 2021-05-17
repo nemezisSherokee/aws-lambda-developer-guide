@@ -23,7 +23,7 @@ cache:
         - | 
             if [ -d "target" ] 
             then
-                #cp -rf ./target  $CI_PROJECT_DIR/sample-apps/blank-java
+                #cp -rf ./target  $CI_PROJECT_DIR/sample-apps/blank-java 
                 echo "before_script: target directory exists"
             else
                 echo "before_script: target directory does not exists."
