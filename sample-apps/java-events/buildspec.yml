@@ -1,7 +1,7 @@
 version: 0.2
 
 phases:
-  install: 
+  install:
     runtime-versions:
       java: corretto11
   pre_build:
@@ -11,7 +11,7 @@ phases:
     commands:
       - echo Build started on `date`
       - cd sample-apps/java-events
-      - mvn install -DskipTests
+      - mvn install # -DskipTests
   post_build:
     commands:
       - echo Build completed on `date`
