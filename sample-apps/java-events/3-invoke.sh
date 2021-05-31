@@ -39,9 +39,9 @@ fi
 while true; do
   if [ $PAYLOAD ]
   then
-    aws lambda invoke --function-name $FUNCTION --payload $PAYLOAD out.json
+    aws lambda invoke --function-name $FUNCTION --cli-binary-format raw-in-base64-out --payload $PAYLOAD out.json
   else
-    aws lambda invoke --function-name $FUNCTION --payload file://event.json out.json
+    aws lambda invoke --function-name $FUNCTION --cli-binary-format raw-in-base64-out --payload file://event.json out.json
   fi
   cat out.json
   echo ""

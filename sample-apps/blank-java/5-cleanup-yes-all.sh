@@ -29,4 +29,4 @@ echo "Deleted $STACK stack."
 rm -rf build .gradle target
 echo "Deleted $STACK stack."
 # remove all buckets starting with lambda : 
-# $ for b in $(aws s3api list-buckets --query 'Buckets[?starts_with(Name, `lambda-`) == `true`].Name' --output text) ; do  aws s3 rb --force s3://$b;  done;
+# $ for b in $(aws s3api list-buckets --query 'Buckets[?starts_with(Name, `lambda-artifacts-`) == `true`].Name' --output text) ; do  aws s3 rb --force s3://$b;  done;
