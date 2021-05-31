@@ -11,7 +11,7 @@ phases:
     commands:
       - echo Build started on `date`
       - cd sample-apps/java-events
-      - ./4-cleanup.sh
+      #- ./4-cleanup.sh
       - sh 4-cleanup.sh
       - 1-create-bucket.sh
       - 2-deploy.sh mvn
