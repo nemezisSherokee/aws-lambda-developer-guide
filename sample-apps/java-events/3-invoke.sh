@@ -36,7 +36,7 @@ then
       ;;
   esac
 fi
-while true; do
+#while true; do
   if [ $PAYLOAD ]
   then
     aws lambda invoke --function-name $FUNCTION --cli-binary-format raw-in-base64-out --payload $PAYLOAD out.json
@@ -45,5 +45,5 @@ while true; do
   fi
   cat out.json
   echo ""
-  sleep 2
-done
+  #sleep 2
+#done
