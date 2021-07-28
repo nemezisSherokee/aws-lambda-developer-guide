@@ -4,7 +4,7 @@ This repository contains the Markdown version of the AWS Lambda Developer Guide 
 
 Table of contents: [index.md](/doc_source/index.md)
 
-## License Summary
+## License Summary 
 
 The documentation is made available under the Creative Commons Attribution-ShareAlike 4.0 International License. See the [LICENSE](./LICENSE) file.
 
