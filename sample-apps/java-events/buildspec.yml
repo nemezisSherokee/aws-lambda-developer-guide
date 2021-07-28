@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   shell: bash
-
+  # ok
 phases:
   install:
     runtime-versions:
