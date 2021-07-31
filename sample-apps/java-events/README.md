@@ -13,7 +13,7 @@ The project includes function code and supporting resources:
 - `1-create-bucket.sh`, `2-deploy.sh`, etc. - Shell scripts that use the AWS CLI to deploy and manage the application.
 
 Use the following instructions to deploy the sample application.
-
+ 
 # Requirements
 - [Java 8 runtime environment (SE JRE)](https://www.oracle.com/java/technologies/javase-downloads.html)
 - [Gradle 5](https://gradle.org/releases/) or [Maven 3](https://maven.apache.org/docs/history.html)
