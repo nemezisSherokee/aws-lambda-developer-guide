@@ -9,6 +9,7 @@ FUNCTION=$(aws cloudformation describe-stack-resource --stack-name $STACK --logi
 aws cloudformation delete-stack --stack-name $STACK
 echo "Deleted $STACK stack."
 
+
 if [ -f bucket-name.txt ]; then
     ARTIFACT_BUCKET=$(cat bucket-name.txt)
     if [[ ! $ARTIFACT_BUCKET =~ lambda-artifacts-[a-z0-9]{16} ]] ; then
