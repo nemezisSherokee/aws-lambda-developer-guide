@@ -2,7 +2,7 @@
 
 This sample application shows the use of the `aws-lambda-java-events` library with various event types. To keep the deployment size minimal, it includes only types that can be used without adding the AWS SDK as a dependency. A separate handler class is defined for each input type.
 
-![Architecture](/sample-apps/java-events/images/sample-java-events.png)
+![Architecture](/sample-apps/java-events/images/sample-java-events.png) 
 
 The project includes function code and supporting resources:
 - `src/main` - A Java function.
