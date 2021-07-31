@@ -5,7 +5,7 @@ This sample application shows the use of the `aws-lambda-java-events` library wi
 ![Architecture](/sample-apps/java-events/images/sample-java-events.png) 
 
 The project includes function code and supporting resources:
-- `src/main` - A Java function.
+- `src/main` - A Java function. 
 - `src/test` - A unit test and helper classes.
 - `template.yml` - An AWS CloudFormation template that creates an application.
 - `build.gradle` - A Gradle build file.
